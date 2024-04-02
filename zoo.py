@@ -15,7 +15,7 @@ class Animal:
     def __init__(self, name, age):
         self.name = name
         self.age = age
-
+        self.type_of_animal = ''
     # Метод для издавания звуков, который будет переопределяться в подклассах
     def make_sound(self):
         pass
@@ -119,27 +119,32 @@ bird = Bird("Твитик", 2, "30 см")
 mammal = Mammal("Пушистик", 4, "Коричневый")
 reptile = Reptile("Скользящий", 5, "Зеленый")
 
-# Добавление животных в зоопарк
-zoo.add_animal(bird)
-zoo.add_animal(mammal)
-zoo.add_animal(reptile)
+def main():
+    # Добавление животных в зоопарк
+    zoo.add_animal(bird)
+    zoo.add_animal(mammal)
+    zoo.add_animal(reptile)
 
-# Создание сотрудников и добавление в зоопарк
-zookeeper = ZooKeeper("Том")
-veterinarian = Veterinarian("Эмили")
+    # Создание сотрудников и добавление в зоопарк
+    zookeeper = ZooKeeper("Том")
+    veterinarian = Veterinarian("Эмили")
 
-zoo.add_staff(zookeeper)
-zoo.add_staff(veterinarian)
+    zoo.add_staff(zookeeper)
+    zoo.add_staff(veterinarian)
 
-# Список животных
-animals = [bird, mammal, reptile]
-# Вызов функции, демонстрирующей полиморфизм
-animal_sound(animals)
+    # Список животных
+    animals = [bird, mammal, reptile]
+    # Вызов функции, демонстрирующей полиморфизм
+    animal_sound(animals)
 
-# Демонстрация работы с зоопарком
-zoo.display_animals()
-zoo.display_staff()
+    # Демонстрация работы с зоопарком
+    zoo.display_animals()
+    zoo.display_staff()
 
-# Сотрудники выполняют свою работу
-zookeeper.feed_animal(bird)
-veterinarian.heal_animal(reptile)
+    # Сотрудники выполняют свою работу
+    zookeeper.feed_animal(bird)
+    veterinarian.heal_animal(reptile)
+
+
+if __name__ == '__main__':
+    main()
